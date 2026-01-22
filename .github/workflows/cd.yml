@@ -29,7 +29,14 @@ jobs:
 
             git fetch --all
             git reset --hard origin/main
+            # cache Symfony : toujours repartir propre
+            rm -rf var/cache/prod
+            mkdir -p var/cache/prod
 
+            # s'assurer que var est cohérent (si tu as les droits, sinon utilise sudo)
+            chgrp -R www-data var || true
+            chmod -R g+rwX var
+            find var -type d -exec chmod 2775 {} \; || true
             composer install --no-interaction --prefer-dist --no-dev --optimize-autoloader
 
             php bin/console doctrine:migrations:migrate -n --allow-no-migration
