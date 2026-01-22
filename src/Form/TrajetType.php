@@ -17,7 +17,7 @@ class TrajetType extends AbstractType
             ->add('departLe', null, [
                 'widget' => 'single_text',
             ])
-            ->add('arrivÃeeLe', null, [
+            ->add('arriveeLe', null, [
                 'widget' => 'single_text',
             ])
             ->add('prix')

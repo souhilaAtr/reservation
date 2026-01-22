@@ -25,7 +25,7 @@ class Trajet
     private ?\DateTimeImmutable $departLe = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $arrivÃeeLe = null;
+    private ?\DateTimeImmutable $arriveeLe = null;
 
     #[ORM\Column]
     private ?int $prix = null;
@@ -85,14 +85,14 @@ class Trajet
         return $this;
     }
 
-    public function getArrivÃeeLe(): ?\DateTimeImmutable
+    public function getArriveeLe(): ?\DateTimeImmutable
     {
-        return $this->arrivÃeeLe;
+        return $this->arriveeLe;
     }
 
-    public function setArrivÃeeLe(\DateTimeImmutable $arrivÃeeLe): static
+    public function setArriveeLe(\DateTimeImmutable $arriveeLe): static
     {
-        $this->arrivÃeeLe = $arrivÃeeLe;
+        $this->arriveeLe = $arriveeLe;
 
         return $this;
     }
